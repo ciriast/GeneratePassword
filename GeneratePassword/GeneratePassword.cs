@@ -4,7 +4,7 @@ namespace GeneratePassword
 {
     public class GeneratePassword
     {
-        public static string GenerateNewPassword()
+        public static string GenerateRandomPassword()
         {
             var bytesToRandomString = new byte[32];
 
