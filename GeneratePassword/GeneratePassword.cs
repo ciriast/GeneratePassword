@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 
 namespace GeneratePassword
 {
@@ -6,6 +7,8 @@ namespace GeneratePassword
     {
         public static string GenerateRandomPassword()
         {
+            StringBuilder stringBuilder = new StringBuilder();
+
             var bytesToRandomString = new byte[32];
 
             var something = RandomNumberGenerator.Create();
