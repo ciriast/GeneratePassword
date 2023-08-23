@@ -5,15 +5,23 @@ namespace GeneratePassword
 {
     public class GeneratePassword
     {
-        public static string GenerateRandomPassword()
+        public static string GenerateRandomPassword(int length)
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder password = new StringBuilder();
 
-            var bytesToRandomString = new byte[32];
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                byte[] randomBytes = new byte[length];
+                rng.GetBytes(randomBytes);
 
-            var something = RandomNumberGenerator.Create();
+                foreach (byte randomByte in randomBytes)
+                {
+                    int randomIndex = randomByte % CharPool.ValidChars.Length;
+                    password.Append(CharPool.ValidChars[randomIndex]);
+                }
+            }
 
-            return "";
+            return password.ToString();
         }       
     }
 }
