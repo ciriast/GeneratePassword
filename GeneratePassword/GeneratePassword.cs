@@ -5,6 +5,7 @@ namespace GeneratePassword
 {
     public class GeneratePassword
     {
+        // Create a random password of the specified length
         public static string GenerateRandomPassword(int length)
         {
             StringBuilder password = new StringBuilder();
