@@ -3,10 +3,10 @@ using System.Text;
 
 namespace GeneratePassword
 {
-    public class GeneratePassword
+    public class PasswordGenerator
     {
         // Create a random password of the specified length
-        public static string GenerateRandomPassword(int length)
+        public static string RandomPassword(int length)
         {
             StringBuilder password = new StringBuilder();
 
